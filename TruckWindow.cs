@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TruckTracking
 {
-    public partial class Form1 : Form
+    public partial class TruckWindow : Form
     {
-        public Form1()
+        public TruckWindow()
         {
             InitializeComponent();
         }
