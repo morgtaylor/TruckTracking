@@ -49,6 +49,12 @@
     <Compile Include="Driver.cs" />
     <Compile Include="Flatbed.cs" />
     <Compile Include="HeavyDuty.cs" />
+    <Compile Include="NewTicketWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewTicketWindow.Designer.cs">
+      <DependentUpon>NewTicketWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Semi.cs" />
     <Compile Include="TowTicket.cs" />
     <Compile Include="TowWindow.cs">
@@ -66,6 +72,9 @@
     <Compile Include="TruckWindow.Designer.cs">
       <DependentUpon>TruckWindow.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="NewTicketWindow.resx">
+      <DependentUpon>NewTicketWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TowWindow.resx">
       <DependentUpon>TowWindow.cs</DependentUpon>
     </EmbeddedResource>

@@ -12,27 +12,38 @@ namespace TruckTracking
 {
     public partial class TowsWindow : Form
     {
+        private TruckWindow truckWindow;
+        private NewTicketWindow newTicketWindow;
+
         public TowsWindow()
         {
             InitializeComponent();
+
+        }
+        private void TruckButton_Click(object sender, EventArgs e)
+        {
+            truckWindow = new TruckWindow();
+            truckWindow.Panel1.Show();
+            splitContainer1.Visible = false;
+
         }
 
+        private void TowButton_Click(object sender, EventArgs e)
+        {
+            splitContainer1.Visible = true;
+        }
+
+        private void NewTicketButton_Click(object sender, EventArgs e)
+        {
+            newTicketWindow = new NewTicketWindow();
+            newTicketWindow.Show();
+        }
         private void MainWindow_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void toolStripTextBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
         {
 
         }
@@ -56,5 +67,11 @@ namespace TruckTracking
         {
 
         }
+
+        private void DoTime_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

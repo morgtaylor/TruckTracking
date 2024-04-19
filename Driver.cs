@@ -8,5 +8,8 @@ namespace TruckTracking
 {
     internal class Driver
     {
+        string driverName;
+        int driverPay;
+
     }
 }

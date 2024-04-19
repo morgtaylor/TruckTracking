@@ -29,54 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TruckWindow));
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.towsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.trucksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.calendarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.driversToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CompanyName = new System.Windows.Forms.TextBox();
-            this.menuStrip1.SuspendLayout();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
-            this.menuStrip1.Font = new System.Drawing.Font("Britannic Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.towsToolStripMenuItem,
-            this.trucksToolStripMenuItem,
-            this.calendarToolStripMenuItem,
-            this.driversToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(9, 9);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(405, 35);
-            this.menuStrip1.TabIndex = 3;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // towsToolStripMenuItem
-            // 
-            this.towsToolStripMenuItem.Name = "towsToolStripMenuItem";
-            this.towsToolStripMenuItem.Size = new System.Drawing.Size(76, 31);
-            this.towsToolStripMenuItem.Text = "Tows";
-            // 
-            // trucksToolStripMenuItem
-            // 
-            this.trucksToolStripMenuItem.Name = "trucksToolStripMenuItem";
-            this.trucksToolStripMenuItem.Size = new System.Drawing.Size(96, 31);
-            this.trucksToolStripMenuItem.Text = "Trucks";
-            // 
-            // calendarToolStripMenuItem
-            // 
-            this.calendarToolStripMenuItem.Name = "calendarToolStripMenuItem";
-            this.calendarToolStripMenuItem.Size = new System.Drawing.Size(120, 31);
-            this.calendarToolStripMenuItem.Text = "Calendar";
-            // 
-            // driversToolStripMenuItem
-            // 
-            this.driversToolStripMenuItem.Name = "driversToolStripMenuItem";
-            this.driversToolStripMenuItem.Size = new System.Drawing.Size(101, 31);
-            this.driversToolStripMenuItem.Text = "Drivers";
             // 
             // CompanyName
             // 
@@ -89,31 +46,45 @@
             this.CompanyName.TabIndex = 4;
             this.CompanyName.Text = "Stan\'s Towing";
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Location = new System.Drawing.Point(12, 70);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1070, 590);
+            this.panel1.TabIndex = 5;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(193, 271);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "label1";
+            // 
             // TruckWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(1094, 672);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.CompanyName);
-            this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TruckWindow";
             this.Text = "Tow Truck Tracking - Trucks";
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem towsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem trucksToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem calendarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem driversToolStripMenuItem;
         private System.Windows.Forms.TextBox CompanyName;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
     }
 }
