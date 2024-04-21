@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SQLite;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -50,8 +51,28 @@ namespace TruckTracking
         }
         public int getTicketNum()
         {
-            oldTicketNum++;
-            return oldTicketNum;
+            int nextTicketNum = 1; // Default value if no tickets are present in the system
+
+            // SQL query to select the maximum ticket number from the Tickets table
+            string selectMaxTicketNumQuery = "SELECT MAX(TicketNumber) FROM Tickets";
+
+            using (var connection = new SQLiteConnection(Database.connectionString))
+            {
+                connection.Open();
+
+                using (var command = new SQLiteCommand(selectMaxTicketNumQuery, connection))
+                {
+                    object result = command.ExecuteScalar();
+
+                    if (result != DBNull.Value && result != null)
+                    {
+                        // If there are existing tickets, increment the maximum ticket number
+                        nextTicketNum = Convert.ToInt32(result) + 1;
+                    }
+                }
+            }
+
+            return nextTicketNum;
         }
     }
 }

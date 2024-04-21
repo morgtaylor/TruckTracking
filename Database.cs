@@ -38,7 +38,7 @@ namespace TruckTracking
                                                 CustomerEmail TEXT,
                                                 CustomerPhone TEXT
                                               );";
-
+                          
 
                     using (var command = new SQLiteCommand(connection))
                     {

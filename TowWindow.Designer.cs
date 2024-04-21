@@ -32,22 +32,23 @@
             this.CompanyName = new System.Windows.Forms.TextBox();
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.Status = new System.Windows.Forms.CheckedListBox();
-            this.TicketNum = new System.Windows.Forms.TextBox();
-            this.DriverName = new System.Windows.Forms.TextBox();
-            this.PuTime = new System.Windows.Forms.TextBox();
-            this.PuLoc = new System.Windows.Forms.TextBox();
-            this.DoLoc = new System.Windows.Forms.TextBox();
-            this.estCost = new System.Windows.Forms.TextBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.NewTicketButton = new System.Windows.Forms.Button();
-            this.custPhone = new System.Windows.Forms.TextBox();
-            this.custEmail = new System.Windows.Forms.TextBox();
-            this.custName = new System.Windows.Forms.TextBox();
             this.StatusBox = new System.Windows.Forms.TextBox();
-            this.DoTime = new System.Windows.Forms.TextBox();
             this.TruckButton = new System.Windows.Forms.Button();
             this.TowButton = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -76,7 +77,7 @@
             // 
             this.Status.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.Status.CheckOnClick = true;
-            this.Status.Font = new System.Drawing.Font("Britannic Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Status.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Status.ForeColor = System.Drawing.SystemColors.MenuText;
             this.Status.FormattingEnabled = true;
             this.Status.Items.AddRange(new object[] {
@@ -87,70 +88,10 @@
             "Dropped off",
             "Paid",
             "Completed"});
-            this.Status.Location = new System.Drawing.Point(879, 44);
+            this.Status.Location = new System.Drawing.Point(983, 38);
             this.Status.Name = "Status";
-            this.Status.Size = new System.Drawing.Size(171, 144);
+            this.Status.Size = new System.Drawing.Size(238, 212);
             this.Status.TabIndex = 6;
-            // 
-            // TicketNum
-            // 
-            this.TicketNum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TicketNum.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TicketNum.Location = new System.Drawing.Point(13, 16);
-            this.TicketNum.Name = "TicketNum";
-            this.TicketNum.Size = new System.Drawing.Size(252, 31);
-            this.TicketNum.TabIndex = 7;
-            this.TicketNum.Text = "Ticket Number: ";
-            // 
-            // DriverName
-            // 
-            this.DriverName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.DriverName.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DriverName.Location = new System.Drawing.Point(13, 53);
-            this.DriverName.Name = "DriverName";
-            this.DriverName.Size = new System.Drawing.Size(252, 31);
-            this.DriverName.TabIndex = 8;
-            this.DriverName.Text = "Driver: ";
-            // 
-            // PuTime
-            // 
-            this.PuTime.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PuTime.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PuTime.Location = new System.Drawing.Point(13, 90);
-            this.PuTime.Name = "PuTime";
-            this.PuTime.Size = new System.Drawing.Size(252, 31);
-            this.PuTime.TabIndex = 9;
-            this.PuTime.Text = "Pick Up Time: ";
-            // 
-            // PuLoc
-            // 
-            this.PuLoc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PuLoc.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PuLoc.Location = new System.Drawing.Point(13, 164);
-            this.PuLoc.Name = "PuLoc";
-            this.PuLoc.Size = new System.Drawing.Size(310, 31);
-            this.PuLoc.TabIndex = 10;
-            this.PuLoc.Text = "Pick Up Location: ";
-            // 
-            // DoLoc
-            // 
-            this.DoLoc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.DoLoc.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DoLoc.Location = new System.Drawing.Point(13, 201);
-            this.DoLoc.Name = "DoLoc";
-            this.DoLoc.Size = new System.Drawing.Size(310, 31);
-            this.DoLoc.TabIndex = 11;
-            this.DoLoc.Text = "Drop Off Location: ";
-            // 
-            // estCost
-            // 
-            this.estCost.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.estCost.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.estCost.Location = new System.Drawing.Point(431, 16);
-            this.estCost.Name = "estCost";
-            this.estCost.Size = new System.Drawing.Size(310, 31);
-            this.estCost.TabIndex = 12;
-            this.estCost.Text = "Est. Cost:";
             // 
             // splitContainer1
             // 
@@ -165,22 +106,36 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.custPhone);
-            this.splitContainer1.Panel2.Controls.Add(this.custEmail);
-            this.splitContainer1.Panel2.Controls.Add(this.custName);
+            this.splitContainer1.Panel2.Controls.Add(this.textBox13);
+            this.splitContainer1.Panel2.Controls.Add(this.textBox10);
+            this.splitContainer1.Panel2.Controls.Add(this.textBox11);
+            this.splitContainer1.Panel2.Controls.Add(this.textBox12);
+            this.splitContainer1.Panel2.Controls.Add(this.textBox7);
+            this.splitContainer1.Panel2.Controls.Add(this.textBox9);
+            this.splitContainer1.Panel2.Controls.Add(this.textBox6);
+            this.splitContainer1.Panel2.Controls.Add(this.textBox4);
+            this.splitContainer1.Panel2.Controls.Add(this.textBox3);
+            this.splitContainer1.Panel2.Controls.Add(this.textBox2);
+            this.splitContainer1.Panel2.Controls.Add(this.textBox1);
             this.splitContainer1.Panel2.Controls.Add(this.Status);
             this.splitContainer1.Panel2.Controls.Add(this.StatusBox);
-            this.splitContainer1.Panel2.Controls.Add(this.DoTime);
-            this.splitContainer1.Panel2.Controls.Add(this.estCost);
-            this.splitContainer1.Panel2.Controls.Add(this.TicketNum);
-            this.splitContainer1.Panel2.Controls.Add(this.DoLoc);
-            this.splitContainer1.Panel2.Controls.Add(this.DriverName);
-            this.splitContainer1.Panel2.Controls.Add(this.PuLoc);
-            this.splitContainer1.Panel2.Controls.Add(this.PuTime);
             this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
-            this.splitContainer1.Size = new System.Drawing.Size(1219, 567);
-            this.splitContainer1.SplitterDistance = 186;
+            this.splitContainer1.Size = new System.Drawing.Size(1240, 579);
+            this.splitContainer1.SplitterDistance = 189;
             this.splitContainer1.TabIndex = 13;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(4, 39);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(1233, 144);
+            this.dataGridView1.TabIndex = 18;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // NewTicketButton
             // 
@@ -196,57 +151,17 @@
             this.NewTicketButton.UseVisualStyleBackColor = false;
             this.NewTicketButton.Click += new System.EventHandler(this.NewTicketButton_Click);
             // 
-            // custPhone
-            // 
-            this.custPhone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.custPhone.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.custPhone.Location = new System.Drawing.Point(681, 329);
-            this.custPhone.Name = "custPhone";
-            this.custPhone.Size = new System.Drawing.Size(369, 31);
-            this.custPhone.TabIndex = 18;
-            this.custPhone.Text = "Customer Phone: ";
-            // 
-            // custEmail
-            // 
-            this.custEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.custEmail.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.custEmail.Location = new System.Drawing.Point(681, 292);
-            this.custEmail.Name = "custEmail";
-            this.custEmail.Size = new System.Drawing.Size(369, 31);
-            this.custEmail.TabIndex = 17;
-            this.custEmail.Text = "Customer Email: ";
-            // 
-            // custName
-            // 
-            this.custName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.custName.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.custName.Location = new System.Drawing.Point(681, 255);
-            this.custName.Name = "custName";
-            this.custName.Size = new System.Drawing.Size(369, 31);
-            this.custName.TabIndex = 16;
-            this.custName.Text = "Customer Name: ";
-            // 
             // StatusBox
             // 
             this.StatusBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.StatusBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.StatusBox.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StatusBox.Location = new System.Drawing.Point(879, 16);
+            this.StatusBox.Location = new System.Drawing.Point(983, 10);
             this.StatusBox.Name = "StatusBox";
-            this.StatusBox.Size = new System.Drawing.Size(171, 31);
+            this.StatusBox.Size = new System.Drawing.Size(238, 31);
             this.StatusBox.TabIndex = 14;
             this.StatusBox.Text = "Status";
             this.StatusBox.TextChanged += new System.EventHandler(this.StatusBox_TextChanged);
-            // 
-            // DoTime
-            // 
-            this.DoTime.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.DoTime.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DoTime.Location = new System.Drawing.Point(13, 127);
-            this.DoTime.Name = "DoTime";
-            this.DoTime.Size = new System.Drawing.Size(252, 31);
-            this.DoTime.TabIndex = 13;
-            this.DoTime.Text = "Drop Off Time: ";
             // 
             // TruckButton
             // 
@@ -270,15 +185,126 @@
             this.TowButton.UseVisualStyleBackColor = true;
             this.TowButton.Click += new System.EventHandler(this.TowButton_Click);
             // 
-            // dataGridView1
+            // textBox13
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(4, 39);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1212, 144);
-            this.dataGridView1.TabIndex = 18;
+            this.textBox13.BackColor = System.Drawing.Color.LightGray;
+            this.textBox13.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox13.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox13.Location = new System.Drawing.Point(15, 47);
+            this.textBox13.Name = "textBox13";
+            this.textBox13.Size = new System.Drawing.Size(169, 24);
+            this.textBox13.TabIndex = 76;
+            this.textBox13.Text = "Truck Number: ";
+            // 
+            // textBox10
+            // 
+            this.textBox10.BackColor = System.Drawing.Color.LightGray;
+            this.textBox10.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox10.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox10.Location = new System.Drawing.Point(434, 47);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(169, 24);
+            this.textBox10.TabIndex = 75;
+            this.textBox10.Text = "Customer Phone: ";
+            // 
+            // textBox11
+            // 
+            this.textBox11.BackColor = System.Drawing.Color.LightGray;
+            this.textBox11.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox11.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox11.Location = new System.Drawing.Point(434, 77);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(169, 24);
+            this.textBox11.TabIndex = 74;
+            this.textBox11.Text = "Customer Email: ";
+            // 
+            // textBox12
+            // 
+            this.textBox12.BackColor = System.Drawing.Color.LightGray;
+            this.textBox12.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox12.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox12.Location = new System.Drawing.Point(434, 16);
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(169, 24);
+            this.textBox12.TabIndex = 73;
+            this.textBox12.Text = "Customer Name: ";
+            // 
+            // textBox7
+            // 
+            this.textBox7.BackColor = System.Drawing.Color.LightGray;
+            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox7.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox7.Location = new System.Drawing.Point(434, 215);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(169, 24);
+            this.textBox7.TabIndex = 72;
+            this.textBox7.Text = "Drop Off Time: ";
+            // 
+            // textBox9
+            // 
+            this.textBox9.BackColor = System.Drawing.Color.LightGray;
+            this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox9.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox9.Location = new System.Drawing.Point(434, 184);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(169, 24);
+            this.textBox9.TabIndex = 71;
+            this.textBox9.Text = "Drop Off Location: ";
+            // 
+            // textBox6
+            // 
+            this.textBox6.BackColor = System.Drawing.Color.LightGray;
+            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox6.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox6.Location = new System.Drawing.Point(16, 215);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(169, 24);
+            this.textBox6.TabIndex = 70;
+            this.textBox6.Text = "Pick Up Time:";
+            // 
+            // textBox4
+            // 
+            this.textBox4.BackColor = System.Drawing.Color.LightGray;
+            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox4.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox4.Location = new System.Drawing.Point(16, 184);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(169, 24);
+            this.textBox4.TabIndex = 69;
+            this.textBox4.Text = "Pick Up Location:";
+            // 
+            // textBox3
+            // 
+            this.textBox3.BackColor = System.Drawing.Color.LightGray;
+            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox3.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.Location = new System.Drawing.Point(15, 107);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(65, 24);
+            this.textBox3.TabIndex = 68;
+            this.textBox3.Text = "Driver:";
+            // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.Color.LightGray;
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox2.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(16, 77);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(96, 24);
+            this.textBox2.TabIndex = 67;
+            this.textBox2.Text = "Est. Cost:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.LightGray;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(16, 16);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(147, 24);
+            this.textBox1.TabIndex = 66;
+            this.textBox1.Text = "Ticket Number: ";
             // 
             // TowsWindow
             // 
@@ -286,7 +312,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(1240, 672);
+            this.ClientSize = new System.Drawing.Size(1261, 668);
             this.Controls.Add(this.CompanyName);
             this.Controls.Add(this.TowButton);
             this.Controls.Add(this.TruckButton);
@@ -312,23 +338,24 @@
 
         private System.Windows.Forms.TextBox CompanyName;
         private System.IO.FileSystemWatcher fileSystemWatcher1;
-        private System.Windows.Forms.TextBox TicketNum;
         private System.Windows.Forms.CheckedListBox Status;
-        private System.Windows.Forms.TextBox DriverName;
-        private System.Windows.Forms.TextBox PuTime;
-        private System.Windows.Forms.TextBox estCost;
-        private System.Windows.Forms.TextBox DoLoc;
-        private System.Windows.Forms.TextBox PuLoc;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.TextBox StatusBox;
-        private System.Windows.Forms.TextBox DoTime;
-        private System.Windows.Forms.TextBox custName;
-        private System.Windows.Forms.TextBox custPhone;
-        private System.Windows.Forms.TextBox custEmail;
         private System.Windows.Forms.Button TruckButton;
         private System.Windows.Forms.Button TowButton;
         private System.Windows.Forms.Button NewTicketButton;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

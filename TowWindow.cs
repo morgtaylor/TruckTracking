@@ -74,5 +74,27 @@ namespace TruckTracking
         {
 
         }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.RowIndex < dataGridView1.Rows.Count - 1)
+            {
+                DataGridViewRow selectedRow = dataGridView1.Rows[e.RowIndex];
+
+                // Populate the text boxes with data from the selected row
+                TicketNum.Text = selectedRow.Cells["TicketNumber"].Value.ToString();
+                DriverName.Text = selectedRow.Cells["DriverName"].Value.ToString();
+                PuTime.Text = selectedRow.Cells["PickUpTime"].Value.ToString();
+                DoTime.Text = selectedRow.Cells["DropOffTime"].Value.ToString();
+                PickUpDate.Text = selectedRow.Cells["PickUpDate"].Value.ToString();
+                DropOffDate.Text = selectedRow.Cells["DropOffDate"].Value.ToString();
+                PuLoc.Text = selectedRow.Cells["PickUpLocation"].Value.ToString();
+                DoLoc.Text = selectedRow.Cells["DropOffLocation"].Value.ToString();
+                estCost.Text = selectedRow.Cells["EstimatedCost"].Value.ToString();
+                custNameNT.Text = selectedRow.Cells["CustomerName"].Value.ToString();
+                custEmailNT.Text = selectedRow.Cells["CustomerEmail"].Value.ToString();
+                custPhoneNT.Text = selectedRow.Cells["CustomerPhone"].Value.ToString();
+            }
+        }
     }
 }
