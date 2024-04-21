@@ -14,8 +14,11 @@ namespace TruckTracking
         // Properties
         public int TicketNumber { get; private set; }
         public string DriverName { get; }
+        public string TruckNum { get; }
         public string PickUpTime { get; }
         public string DropOffTime { get; }
+        public string PickUpDate { get; }
+        public string DropOffDate { get; }
         public string PickUpLocation { get; }
         public string DropOffLocation { get; }
         public double EstimatedCost { get; }
@@ -25,12 +28,15 @@ namespace TruckTracking
         public List<bool> StatusList { get; }
 
 
-        public TowTicket(int ticketNumber, string driverName, string pickUpTime, string dropOffTime, string pickUpLocation, string dropOffLocation, double estimatedCost, string customerName, string customerEmail, string customerPhone)
+        public TowTicket(int ticketNumber, string driverName, string truckNum, string pickUpTime, string dropOffTime, string pickUpDate, string dropOffDate, string pickUpLocation, string dropOffLocation, double estimatedCost, string customerName, string customerEmail, string customerPhone)
         {
             TicketNumber = ticketNumber;
             DriverName = driverName;
+            TruckNum = truckNum;
             PickUpTime = pickUpTime;
             DropOffTime = dropOffTime;
+            PickUpDate = pickUpDate;
+            DropOffDate = dropOffDate;
             PickUpLocation = pickUpLocation;
             DropOffLocation = dropOffLocation;
             EstimatedCost = estimatedCost;

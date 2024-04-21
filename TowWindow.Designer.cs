@@ -40,7 +40,6 @@
             this.estCost = new System.Windows.Forms.TextBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.NewTicketButton = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.custPhone = new System.Windows.Forms.TextBox();
             this.custEmail = new System.Windows.Forms.TextBox();
             this.custName = new System.Windows.Forms.TextBox();
@@ -48,12 +47,13 @@
             this.DoTime = new System.Windows.Forms.TextBox();
             this.TruckButton = new System.Windows.Forms.Button();
             this.TowButton = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // CompanyName
@@ -87,7 +87,7 @@
             "Dropped off",
             "Paid",
             "Completed"});
-            this.Status.Location = new System.Drawing.Point(13, 275);
+            this.Status.Location = new System.Drawing.Point(879, 44);
             this.Status.Name = "Status";
             this.Status.Size = new System.Drawing.Size(171, 144);
             this.Status.TabIndex = 6;
@@ -156,14 +156,18 @@
             // 
             this.splitContainer1.Location = new System.Drawing.Point(9, 76);
             this.splitContainer1.Name = "splitContainer1";
+            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.dataGridView1);
             this.splitContainer1.Panel1.Controls.Add(this.NewTicketButton);
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.panel1);
+            this.splitContainer1.Panel2.Controls.Add(this.custPhone);
+            this.splitContainer1.Panel2.Controls.Add(this.custEmail);
+            this.splitContainer1.Panel2.Controls.Add(this.custName);
             this.splitContainer1.Panel2.Controls.Add(this.Status);
             this.splitContainer1.Panel2.Controls.Add(this.StatusBox);
             this.splitContainer1.Panel2.Controls.Add(this.DoTime);
@@ -173,8 +177,9 @@
             this.splitContainer1.Panel2.Controls.Add(this.DriverName);
             this.splitContainer1.Panel2.Controls.Add(this.PuLoc);
             this.splitContainer1.Panel2.Controls.Add(this.PuTime);
-            this.splitContainer1.Size = new System.Drawing.Size(1064, 567);
-            this.splitContainer1.SplitterDistance = 305;
+            this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
+            this.splitContainer1.Size = new System.Drawing.Size(1219, 567);
+            this.splitContainer1.SplitterDistance = 186;
             this.splitContainer1.TabIndex = 13;
             // 
             // NewTicketButton
@@ -191,21 +196,11 @@
             this.NewTicketButton.UseVisualStyleBackColor = false;
             this.NewTicketButton.Click += new System.EventHandler(this.NewTicketButton_Click);
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.custPhone);
-            this.panel1.Controls.Add(this.custEmail);
-            this.panel1.Controls.Add(this.custName);
-            this.panel1.Location = new System.Drawing.Point(359, 430);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(393, 134);
-            this.panel1.TabIndex = 15;
-            // 
             // custPhone
             // 
             this.custPhone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.custPhone.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.custPhone.Location = new System.Drawing.Point(13, 91);
+            this.custPhone.Location = new System.Drawing.Point(681, 329);
             this.custPhone.Name = "custPhone";
             this.custPhone.Size = new System.Drawing.Size(369, 31);
             this.custPhone.TabIndex = 18;
@@ -215,7 +210,7 @@
             // 
             this.custEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.custEmail.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.custEmail.Location = new System.Drawing.Point(13, 54);
+            this.custEmail.Location = new System.Drawing.Point(681, 292);
             this.custEmail.Name = "custEmail";
             this.custEmail.Size = new System.Drawing.Size(369, 31);
             this.custEmail.TabIndex = 17;
@@ -225,7 +220,7 @@
             // 
             this.custName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.custName.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.custName.Location = new System.Drawing.Point(13, 17);
+            this.custName.Location = new System.Drawing.Point(681, 255);
             this.custName.Name = "custName";
             this.custName.Size = new System.Drawing.Size(369, 31);
             this.custName.TabIndex = 16;
@@ -236,11 +231,12 @@
             this.StatusBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.StatusBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.StatusBox.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StatusBox.Location = new System.Drawing.Point(13, 247);
+            this.StatusBox.Location = new System.Drawing.Point(879, 16);
             this.StatusBox.Name = "StatusBox";
             this.StatusBox.Size = new System.Drawing.Size(171, 31);
             this.StatusBox.TabIndex = 14;
             this.StatusBox.Text = "Status";
+            this.StatusBox.TextChanged += new System.EventHandler(this.StatusBox_TextChanged);
             // 
             // DoTime
             // 
@@ -274,12 +270,23 @@
             this.TowButton.UseVisualStyleBackColor = true;
             this.TowButton.Click += new System.EventHandler(this.TowButton_Click);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(4, 39);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(1212, 144);
+            this.dataGridView1.TabIndex = 18;
+            // 
             // TowsWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(1094, 672);
+            this.ClientSize = new System.Drawing.Size(1240, 672);
             this.Controls.Add(this.CompanyName);
             this.Controls.Add(this.TowButton);
             this.Controls.Add(this.TruckButton);
@@ -295,8 +302,7 @@
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -316,13 +322,13 @@
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.TextBox StatusBox;
         private System.Windows.Forms.TextBox DoTime;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox custName;
         private System.Windows.Forms.TextBox custPhone;
         private System.Windows.Forms.TextBox custEmail;
         private System.Windows.Forms.Button TruckButton;
         private System.Windows.Forms.Button TowButton;
         private System.Windows.Forms.Button NewTicketButton;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 

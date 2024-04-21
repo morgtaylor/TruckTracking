@@ -16,6 +16,9 @@ namespace TruckTracking
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            Database.InitializeDatabase();
+
             Application.Run(new TowsWindow());
         }
     }
