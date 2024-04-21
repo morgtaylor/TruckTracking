@@ -6,19 +6,23 @@ using System.Threading.Tasks;
 
 namespace TruckTracking
 {
+    
     internal class TowTicket
     {
-        int TicketNumber;
-        string DriverName;
-        string PickUpTime;
-        string DropOffTime;
-        string PickUpLocation;
-        string DropOffLocation;
-        double EstimatedCost;
-        string CustomerName;
-        string CustomerEmail;
-        string CustomerPhone;
-        List<bool> StatusList;
+        private static int oldTicketNum = 0;
+
+        // Properties
+        public int TicketNumber { get; private set; }
+        public string DriverName { get; }
+        public string PickUpTime { get; }
+        public string DropOffTime { get; }
+        public string PickUpLocation { get; }
+        public string DropOffLocation { get; }
+        public double EstimatedCost { get; }
+        public string CustomerName { get; }
+        public string CustomerEmail { get; }
+        public string CustomerPhone { get; }
+        public List<bool> StatusList { get; }
 
 
         public TowTicket(int ticketNumber, string driverName, string pickUpTime, string dropOffTime, string pickUpLocation, string dropOffLocation, double estimatedCost, string customerName, string customerEmail, string customerPhone)
@@ -34,6 +38,14 @@ namespace TruckTracking
             CustomerEmail = customerEmail;
             CustomerPhone = customerPhone;
             StatusList = new List<bool>();
+        }
+        public TowTicket()
+        {
+        }
+        public int getTicketNum()
+        {
+            oldTicketNum++;
+            return oldTicketNum;
         }
     }
 }

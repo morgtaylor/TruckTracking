@@ -42,36 +42,5 @@ namespace TruckTracking
         {
 
         }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged_2(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged_3(object sender, EventArgs e)
-        {
-
-        }
-
-        private void DoTime_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
     }
 }

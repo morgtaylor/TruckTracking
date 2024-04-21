@@ -66,7 +66,6 @@
             this.CompanyName.Size = new System.Drawing.Size(181, 40);
             this.CompanyName.TabIndex = 0;
             this.CompanyName.Text = "Stan\'s Towing";
-            this.CompanyName.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // fileSystemWatcher1
             // 
@@ -112,7 +111,6 @@
             this.DriverName.Size = new System.Drawing.Size(252, 31);
             this.DriverName.TabIndex = 8;
             this.DriverName.Text = "Driver: ";
-            this.DriverName.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // PuTime
             // 
@@ -212,7 +210,6 @@
             this.custPhone.Size = new System.Drawing.Size(369, 31);
             this.custPhone.TabIndex = 18;
             this.custPhone.Text = "Customer Phone: ";
-            this.custPhone.TextChanged += new System.EventHandler(this.textBox1_TextChanged_3);
             // 
             // custEmail
             // 
@@ -233,7 +230,6 @@
             this.custName.Size = new System.Drawing.Size(369, 31);
             this.custName.TabIndex = 16;
             this.custName.Text = "Customer Name: ";
-            this.custName.TextChanged += new System.EventHandler(this.textBox1_TextChanged_2);
             // 
             // StatusBox
             // 
@@ -245,7 +241,6 @@
             this.StatusBox.Size = new System.Drawing.Size(171, 31);
             this.StatusBox.TabIndex = 14;
             this.StatusBox.Text = "Status";
-            this.StatusBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             // 
             // DoTime
             // 
@@ -256,7 +251,6 @@
             this.DoTime.Size = new System.Drawing.Size(252, 31);
             this.DoTime.TabIndex = 13;
             this.DoTime.Text = "Drop Off Time: ";
-            this.DoTime.TextChanged += new System.EventHandler(this.DoTime_TextChanged);
             // 
             // TruckButton
             // 
