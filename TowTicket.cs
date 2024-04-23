@@ -8,10 +8,8 @@ using System.Threading.Tasks;
 namespace TruckTracking
 {
     
-    internal class TowTicket
+    public class TowTicket
     {
-        private static int oldTicketNum = 0;
-
         // Properties
         public int TicketNumber { get; private set; }
         public string DriverName { get; }
@@ -28,7 +26,7 @@ namespace TruckTracking
         public string CustomerPhone { get; }
         public List<bool> StatusList { get; }
 
-
+        //Parameterized Constructor
         public TowTicket(int ticketNumber, string driverName, string truckNum, string pickUpTime, string dropOffTime, string pickUpDate, string dropOffDate, string pickUpLocation, string dropOffLocation, double estimatedCost, string customerName, string customerEmail, string customerPhone)
         {
             TicketNumber = ticketNumber;
@@ -46,12 +44,15 @@ namespace TruckTracking
             CustomerPhone = customerPhone;
             StatusList = new List<bool>();
         }
+        //Empty Constructor
         public TowTicket()
         {
+
         }
+        //method to get ticket number for new tickets
         public int getTicketNum()
         {
-            int nextTicketNum = 1; // Default value if no tickets are present in the system
+            int nextTicketNum = 1;
 
             // SQL query to select the maximum ticket number from the Tickets table
             string selectMaxTicketNumQuery = "SELECT MAX(TicketNumber) FROM Tickets";

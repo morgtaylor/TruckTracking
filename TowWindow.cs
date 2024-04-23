@@ -13,26 +13,26 @@ namespace TruckTracking
 {
     public partial class TowsWindow : Form
     {
-        private TruckWindow truckWindow;
+        
         private NewTicketWindow newTicketWindow;
 
         public TowsWindow()
         {
             InitializeComponent();
             PopulateTicketGrid();
-
+            TruckPanel.Visible = false;
         }
         private void TruckButton_Click(object sender, EventArgs e)
         {
-            truckWindow = new TruckWindow();
-            truckWindow.Panel1.Show();
-            splitContainer1.Visible = false;
+            TowSplitContainer.Visible = false;
+            TruckPanel.Visible = true;
 
         }
 
         private void TowButton_Click(object sender, EventArgs e)
         {
-            splitContainer1.Visible = true;
+            TowSplitContainer.Visible = true;
+            TruckPanel.Visible = false;
         }
 
         private void NewTicketButton_Click(object sender, EventArgs e)
@@ -77,24 +77,30 @@ namespace TruckTracking
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && e.RowIndex < dataGridView1.Rows.Count - 1)
+            if (e.RowIndex >= 0 && e.RowIndex < dataGridView1.Rows.Count)
             {
                 DataGridViewRow selectedRow = dataGridView1.Rows[e.RowIndex];
 
                 // Populate the text boxes with data from the selected row
-                TicketNum.Text = selectedRow.Cells["TicketNumber"].Value.ToString();
-                DriverName.Text = selectedRow.Cells["DriverName"].Value.ToString();
-                PuTime.Text = selectedRow.Cells["PickUpTime"].Value.ToString();
-                DoTime.Text = selectedRow.Cells["DropOffTime"].Value.ToString();
-                PickUpDate.Text = selectedRow.Cells["PickUpDate"].Value.ToString();
-                DropOffDate.Text = selectedRow.Cells["DropOffDate"].Value.ToString();
-                PuLoc.Text = selectedRow.Cells["PickUpLocation"].Value.ToString();
-                DoLoc.Text = selectedRow.Cells["DropOffLocation"].Value.ToString();
-                estCost.Text = selectedRow.Cells["EstimatedCost"].Value.ToString();
-                custNameNT.Text = selectedRow.Cells["CustomerName"].Value.ToString();
-                custEmailNT.Text = selectedRow.Cells["CustomerEmail"].Value.ToString();
-                custPhoneNT.Text = selectedRow.Cells["CustomerPhone"].Value.ToString();
+                TicketNumTW.Text = selectedRow.Cells["TicketNumber"].Value.ToString();
+                DriverNameTW.Text = selectedRow.Cells["DriverName"].Value.ToString();
+                TruckNumTW.Text = selectedRow.Cells["TruckNum"].Value.ToString();
+                PuTimeTW.Text = selectedRow.Cells["PickUpTime"].Value.ToString();
+                DoTimeTW.Text = selectedRow.Cells["DropOffTime"].Value.ToString();
+                PickUpDateTW.Text = selectedRow.Cells["PickUpDate"].Value.ToString();
+                DropOffDateTW.Text = selectedRow.Cells["DropOffDate"].Value.ToString();
+                PuLocTW.Text = selectedRow.Cells["PickUpLocation"].Value.ToString();
+                DoLocTW.Text = selectedRow.Cells["DropOffLocation"].Value.ToString();
+                estCostTW.Text = selectedRow.Cells["EstimatedCost"].Value.ToString();
+                custNameTW.Text = selectedRow.Cells["CustomerName"].Value.ToString();
+                custEmailTW.Text = selectedRow.Cells["CustomerEmail"].Value.ToString();
+                custPhoneTW.Text = selectedRow.Cells["CustomerPhone"].Value.ToString();
             }
+        }
+
+        private void monthCalendar1_DateSelected(object sender, DateRangeEventArgs e)
+        {
+
         }
     }
 }

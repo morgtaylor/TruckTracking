@@ -8,12 +8,17 @@ namespace TruckTracking
 {
     internal class Truck
     {
-        int mileage;
-        DateTime lastServiceDate;
-        string vin;
-        int emptyWeight;
-        int loadedWeight;
-        string status;
+        public int TruckNum { get; set; }
+        public int Mileage { get; set; }
+        public DateTime LastServiceDate { get; set; }
+        public string VIN { get; set; }
+        public int EmptyWeight { get; set; }
+        public int LoadedWeight { get; set; }
+        public string Status { get; set; }
 
+        public Truck(int truckNum)
+        {
+            TruckNum = truckNum;
+        }
     }
 }

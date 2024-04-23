@@ -18,7 +18,7 @@ namespace TruckTracking
             // Display the generated ticket number in the UI
             TicketNum.Text = ticketNumber.ToString();
         }
-        private void SaveButton_Click(object sender, EventArgs e)
+        internal void SaveButton_Click(object sender, EventArgs e)
         {
             // Gather information from UI controls
             string driverName = DriverName.Text;
@@ -57,7 +57,7 @@ namespace TruckTracking
                     customerPhone
                 );
 
-            InsertTicketIntoDatabase(ticket);
+            TicketDatabase.InsertTicketIntoDatabase(ticket);
 
             ClearUIControls();
 
@@ -65,39 +65,7 @@ namespace TruckTracking
             MessageBox.Show("Ticket saved successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
         }
-        private void InsertTicketIntoDatabase(TowTicket ticket)
-        {
-            // SQL query to insert ticket information into the Tickets table
-            string insertQuery = @"INSERT INTO Tickets (TicketNumber, DriverName, TruckNum, PickUpTime, DropOffTime, PickUpDate, DropOffDate, PickUpLocation, DropOffLocation, EstimatedCost, CustomerName, CustomerEmail, CustomerPhone)
-                            VALUES (@TicketNumber, @DriverName, @TruckNum, @PickUpTime, @DropOffTime, @PickUpDate, @DropOffDate, @PickUpLocation, @DropOffLocation, @EstimatedCost, @CustomerName, @CustomerEmail, @CustomerPhone)";
-
-            // Execute the query
-            using (var connection = new SQLiteConnection(Database.connectionString))
-            {
-                connection.Open();
-
-                using (var command = new SQLiteCommand(insertQuery, connection))
-                {
-                    // Bind parameters
-                    command.Parameters.AddWithValue("@TicketNumber", ticket.TicketNumber);
-                    command.Parameters.AddWithValue("@DriverName", ticket.DriverName);
-                    command.Parameters.AddWithValue("@TruckNum", ticket.TruckNum);
-                    command.Parameters.AddWithValue("@PickUpTime", ticket.PickUpTime);
-                    command.Parameters.AddWithValue("@DropOffTime", ticket.DropOffTime);
-                    command.Parameters.AddWithValue("@PickUpDate", ticket.PickUpDate);
-                    command.Parameters.AddWithValue("@DropOffDate", ticket.DropOffDate);
-                    command.Parameters.AddWithValue("@PickUpLocation", ticket.PickUpLocation);
-                    command.Parameters.AddWithValue("@DropOffLocation", ticket.DropOffLocation);
-                    command.Parameters.AddWithValue("@EstimatedCost", ticket.EstimatedCost);
-                    command.Parameters.AddWithValue("@CustomerName", ticket.CustomerName);
-                    command.Parameters.AddWithValue("@CustomerEmail", ticket.CustomerEmail);
-                    command.Parameters.AddWithValue("@CustomerPhone", ticket.CustomerPhone);
-
-                    // Execute the command
-                    command.ExecuteNonQuery();
-                }
-            }
-        }
+        
         private void ClearUIControls()
         {
             TicketNum.Text = "";

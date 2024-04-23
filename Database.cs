@@ -52,5 +52,6 @@ namespace TruckTracking
                 Console.WriteLine("Database file already exists. Checking for necessary tables.");
             }
         }
+       
     }
 }

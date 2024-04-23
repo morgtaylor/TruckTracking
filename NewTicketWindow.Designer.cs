@@ -30,6 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.TruckNumBox = new System.Windows.Forms.ComboBox();
+            this.DODate = new System.Windows.Forms.DateTimePicker();
+            this.PUDate = new System.Windows.Forms.DateTimePicker();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.textBox12 = new System.Windows.Forms.TextBox();
@@ -57,17 +61,20 @@
             this.TicketNum = new System.Windows.Forms.TextBox();
             this.DriverName = new System.Windows.Forms.TextBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.PUDate = new System.Windows.Forms.DateTimePicker();
-            this.DODate = new System.Windows.Forms.DateTimePicker();
-            this.TruckNumBox = new System.Windows.Forms.ComboBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.textBox13);
+            this.panel2.Controls.Add(this.custPhoneNT);
+            this.panel2.Controls.Add(this.custEmailNT);
+            this.panel2.Controls.Add(this.custNameNT);
+            this.panel2.Controls.Add(this.DoTime);
+            this.panel2.Controls.Add(this.DoLoc);
+            this.panel2.Controls.Add(this.PuTime);
+            this.panel2.Controls.Add(this.PuLoc);
             this.panel2.Controls.Add(this.TruckNumBox);
+            this.panel2.Controls.Add(this.textBox13);
             this.panel2.Controls.Add(this.DODate);
             this.panel2.Controls.Add(this.PUDate);
             this.panel2.Controls.Add(this.textBox10);
@@ -82,14 +89,7 @@
             this.panel2.Controls.Add(this.textBox3);
             this.panel2.Controls.Add(this.textBox2);
             this.panel2.Controls.Add(this.textBox1);
-            this.panel2.Controls.Add(this.custPhoneNT);
-            this.panel2.Controls.Add(this.custEmailNT);
-            this.panel2.Controls.Add(this.custNameNT);
             this.panel2.Controls.Add(this.CompanyName);
-            this.panel2.Controls.Add(this.DoTime);
-            this.panel2.Controls.Add(this.DoLoc);
-            this.panel2.Controls.Add(this.PuLoc);
-            this.panel2.Controls.Add(this.PuTime);
             this.panel2.Controls.Add(this.estCost);
             this.panel2.Controls.Add(this.SaveButton);
             this.panel2.Controls.Add(this.StatusBox);
@@ -98,17 +98,59 @@
             this.panel2.Controls.Add(this.DriverName);
             this.panel2.Location = new System.Drawing.Point(12, 12);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(721, 572);
+            this.panel2.Size = new System.Drawing.Size(795, 641);
             this.panel2.TabIndex = 31;
+            // 
+            // textBox13
+            // 
+            this.textBox13.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.textBox13.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox13.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox13.Location = new System.Drawing.Point(7, 64);
+            this.textBox13.Name = "textBox13";
+            this.textBox13.Size = new System.Drawing.Size(169, 24);
+            this.textBox13.TabIndex = 65;
+            this.textBox13.Text = "Truck Number: ";
+            // 
+            // TruckNumBox
+            // 
+            this.TruckNumBox.Font = new System.Drawing.Font("Britannic Bold", 15.75F);
+            this.TruckNumBox.FormattingEnabled = true;
+            this.TruckNumBox.Items.AddRange(new object[] {
+            "3",
+            "8",
+            "10",
+            "13",
+            "14"});
+            this.TruckNumBox.Location = new System.Drawing.Point(152, 61);
+            this.TruckNumBox.Name = "TruckNumBox";
+            this.TruckNumBox.Size = new System.Drawing.Size(121, 31);
+            this.TruckNumBox.TabIndex = 64;
+            // 
+            // DODate
+            // 
+            this.DODate.Font = new System.Drawing.Font("Britannic Bold", 15.75F);
+            this.DODate.Location = new System.Drawing.Point(166, 296);
+            this.DODate.Name = "DODate";
+            this.DODate.Size = new System.Drawing.Size(355, 31);
+            this.DODate.TabIndex = 63;
+            // 
+            // PUDate
+            // 
+            this.PUDate.Font = new System.Drawing.Font("Britannic Bold", 15.75F);
+            this.PUDate.Location = new System.Drawing.Point(166, 181);
+            this.PUDate.Name = "PUDate";
+            this.PUDate.Size = new System.Drawing.Size(355, 31);
+            this.PUDate.TabIndex = 62;
             // 
             // textBox10
             // 
             this.textBox10.BackColor = System.Drawing.SystemColors.MenuBar;
             this.textBox10.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox10.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox10.Location = new System.Drawing.Point(7, 505);
+            this.textBox10.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox10.Location = new System.Drawing.Point(7, 463);
             this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(169, 24);
+            this.textBox10.Size = new System.Drawing.Size(169, 22);
             this.textBox10.TabIndex = 61;
             this.textBox10.Text = "Customer Phone: ";
             // 
@@ -116,10 +158,10 @@
             // 
             this.textBox11.BackColor = System.Drawing.SystemColors.MenuBar;
             this.textBox11.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox11.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox11.Location = new System.Drawing.Point(7, 468);
+            this.textBox11.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox11.Location = new System.Drawing.Point(7, 428);
             this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(169, 24);
+            this.textBox11.Size = new System.Drawing.Size(169, 22);
             this.textBox11.TabIndex = 60;
             this.textBox11.Text = "Customer Email: ";
             // 
@@ -127,10 +169,10 @@
             // 
             this.textBox12.BackColor = System.Drawing.SystemColors.MenuBar;
             this.textBox12.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox12.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox12.Location = new System.Drawing.Point(7, 431);
+            this.textBox12.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox12.Location = new System.Drawing.Point(7, 393);
             this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(169, 24);
+            this.textBox12.Size = new System.Drawing.Size(169, 22);
             this.textBox12.TabIndex = 59;
             this.textBox12.Text = "Customer Name: ";
             // 
@@ -138,10 +180,10 @@
             // 
             this.textBox7.BackColor = System.Drawing.SystemColors.MenuBar;
             this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox7.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(7, 373);
+            this.textBox7.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox7.Location = new System.Drawing.Point(7, 335);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(169, 24);
+            this.textBox7.Size = new System.Drawing.Size(169, 22);
             this.textBox7.TabIndex = 58;
             this.textBox7.Text = "Drop Off Time: ";
             // 
@@ -149,10 +191,10 @@
             // 
             this.textBox8.BackColor = System.Drawing.SystemColors.MenuBar;
             this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox8.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(7, 336);
+            this.textBox8.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox8.Location = new System.Drawing.Point(7, 300);
             this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(169, 24);
+            this.textBox8.Size = new System.Drawing.Size(169, 22);
             this.textBox8.TabIndex = 57;
             this.textBox8.Text = "Drop Off Date: ";
             // 
@@ -160,10 +202,10 @@
             // 
             this.textBox9.BackColor = System.Drawing.SystemColors.MenuBar;
             this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox9.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.Location = new System.Drawing.Point(7, 299);
+            this.textBox9.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox9.Location = new System.Drawing.Point(7, 265);
             this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(169, 24);
+            this.textBox9.Size = new System.Drawing.Size(169, 22);
             this.textBox9.TabIndex = 56;
             this.textBox9.Text = "Drop Off Location: ";
             // 
@@ -171,10 +213,10 @@
             // 
             this.textBox6.BackColor = System.Drawing.SystemColors.MenuBar;
             this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox6.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(7, 250);
+            this.textBox6.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox6.Location = new System.Drawing.Point(7, 220);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(169, 24);
+            this.textBox6.Size = new System.Drawing.Size(169, 22);
             this.textBox6.TabIndex = 55;
             this.textBox6.Text = "Pick Up Time:";
             // 
@@ -182,10 +224,10 @@
             // 
             this.textBox5.BackColor = System.Drawing.SystemColors.MenuBar;
             this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox5.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(7, 213);
+            this.textBox5.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox5.Location = new System.Drawing.Point(7, 189);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(169, 24);
+            this.textBox5.Size = new System.Drawing.Size(169, 22);
             this.textBox5.TabIndex = 54;
             this.textBox5.Text = "Pick Up Date:";
             // 
@@ -193,10 +235,10 @@
             // 
             this.textBox4.BackColor = System.Drawing.SystemColors.MenuBar;
             this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(7, 174);
+            this.textBox4.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox4.Location = new System.Drawing.Point(7, 147);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(169, 24);
+            this.textBox4.Size = new System.Drawing.Size(169, 22);
             this.textBox4.TabIndex = 53;
             this.textBox4.Text = "Pick Up Location:";
             // 
@@ -205,7 +247,7 @@
             this.textBox3.BackColor = System.Drawing.SystemColors.MenuBar;
             this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox3.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(243, 122);
+            this.textBox3.Location = new System.Drawing.Point(243, 103);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(65, 24);
             this.textBox3.TabIndex = 52;
@@ -216,7 +258,7 @@
             this.textBox2.BackColor = System.Drawing.SystemColors.MenuBar;
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox2.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(7, 121);
+            this.textBox2.Location = new System.Drawing.Point(7, 108);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(96, 24);
             this.textBox2.TabIndex = 51;
@@ -236,28 +278,28 @@
             // custPhoneNT
             // 
             this.custPhoneNT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.custPhoneNT.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.custPhoneNT.Location = new System.Drawing.Point(182, 503);
+            this.custPhoneNT.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.custPhoneNT.Location = new System.Drawing.Point(152, 461);
             this.custPhoneNT.Name = "custPhoneNT";
-            this.custPhoneNT.Size = new System.Drawing.Size(369, 31);
+            this.custPhoneNT.Size = new System.Drawing.Size(369, 29);
             this.custPhoneNT.TabIndex = 49;
             // 
             // custEmailNT
             // 
             this.custEmailNT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.custEmailNT.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.custEmailNT.Location = new System.Drawing.Point(182, 466);
+            this.custEmailNT.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.custEmailNT.Location = new System.Drawing.Point(152, 426);
             this.custEmailNT.Name = "custEmailNT";
-            this.custEmailNT.Size = new System.Drawing.Size(369, 31);
+            this.custEmailNT.Size = new System.Drawing.Size(369, 29);
             this.custEmailNT.TabIndex = 48;
             // 
             // custNameNT
             // 
             this.custNameNT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.custNameNT.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.custNameNT.Location = new System.Drawing.Point(182, 429);
+            this.custNameNT.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.custNameNT.Location = new System.Drawing.Point(152, 391);
             this.custNameNT.Name = "custNameNT";
-            this.custNameNT.Size = new System.Drawing.Size(369, 31);
+            this.custNameNT.Size = new System.Drawing.Size(369, 29);
             this.custNameNT.TabIndex = 47;
             // 
             // CompanyName
@@ -274,44 +316,44 @@
             // DoTime
             // 
             this.DoTime.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.DoTime.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DoTime.Location = new System.Drawing.Point(182, 371);
+            this.DoTime.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DoTime.Location = new System.Drawing.Point(166, 333);
             this.DoTime.Name = "DoTime";
-            this.DoTime.Size = new System.Drawing.Size(136, 31);
+            this.DoTime.Size = new System.Drawing.Size(136, 29);
             this.DoTime.TabIndex = 42;
             // 
             // DoLoc
             // 
             this.DoLoc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.DoLoc.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DoLoc.Location = new System.Drawing.Point(182, 297);
+            this.DoLoc.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DoLoc.Location = new System.Drawing.Point(166, 258);
             this.DoLoc.Name = "DoLoc";
-            this.DoLoc.Size = new System.Drawing.Size(300, 31);
+            this.DoLoc.Size = new System.Drawing.Size(355, 29);
             this.DoLoc.TabIndex = 40;
             // 
             // PuLoc
             // 
             this.PuLoc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PuLoc.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PuLoc.Location = new System.Drawing.Point(182, 172);
+            this.PuLoc.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PuLoc.Location = new System.Drawing.Point(166, 145);
             this.PuLoc.Name = "PuLoc";
-            this.PuLoc.Size = new System.Drawing.Size(300, 31);
+            this.PuLoc.Size = new System.Drawing.Size(355, 29);
             this.PuLoc.TabIndex = 39;
             // 
             // PuTime
             // 
             this.PuTime.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PuTime.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PuTime.Location = new System.Drawing.Point(182, 248);
+            this.PuTime.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PuTime.Location = new System.Drawing.Point(166, 218);
             this.PuTime.Name = "PuTime";
-            this.PuTime.Size = new System.Drawing.Size(136, 31);
+            this.PuTime.Size = new System.Drawing.Size(136, 29);
             this.PuTime.TabIndex = 38;
             // 
             // estCost
             // 
             this.estCost.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.estCost.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.estCost.Location = new System.Drawing.Point(109, 119);
+            this.estCost.Location = new System.Drawing.Point(109, 101);
             this.estCost.Name = "estCost";
             this.estCost.Size = new System.Drawing.Size(115, 31);
             this.estCost.TabIndex = 41;
@@ -320,7 +362,7 @@
             // 
             this.SaveButton.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.SaveButton.Font = new System.Drawing.Font("Britannic Bold", 15.75F);
-            this.SaveButton.Location = new System.Drawing.Point(570, 515);
+            this.SaveButton.Location = new System.Drawing.Point(646, 578);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(146, 54);
             this.SaveButton.TabIndex = 31;
@@ -333,7 +375,7 @@
             this.StatusBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.StatusBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.StatusBox.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StatusBox.Location = new System.Drawing.Point(545, 143);
+            this.StatusBox.Location = new System.Drawing.Point(621, 5);
             this.StatusBox.Name = "StatusBox";
             this.StatusBox.Size = new System.Drawing.Size(171, 31);
             this.StatusBox.TabIndex = 43;
@@ -354,7 +396,7 @@
             "Dropped off",
             "Paid",
             "Completed"});
-            this.Status.Location = new System.Drawing.Point(545, 180);
+            this.Status.Location = new System.Drawing.Point(621, 48);
             this.Status.Name = "Status";
             this.Status.Size = new System.Drawing.Size(171, 164);
             this.Status.TabIndex = 33;
@@ -372,7 +414,7 @@
             // 
             this.DriverName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.DriverName.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DriverName.Location = new System.Drawing.Point(314, 119);
+            this.DriverName.Location = new System.Drawing.Point(314, 101);
             this.DriverName.Name = "DriverName";
             this.DriverName.Size = new System.Drawing.Size(128, 31);
             this.DriverName.TabIndex = 37;
@@ -383,53 +425,11 @@
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
-            // PUDate
-            // 
-            this.PUDate.Font = new System.Drawing.Font("Britannic Bold", 15.75F);
-            this.PUDate.Location = new System.Drawing.Point(182, 211);
-            this.PUDate.Name = "PUDate";
-            this.PUDate.Size = new System.Drawing.Size(346, 31);
-            this.PUDate.TabIndex = 62;
-            // 
-            // DODate
-            // 
-            this.DODate.Font = new System.Drawing.Font("Britannic Bold", 15.75F);
-            this.DODate.Location = new System.Drawing.Point(182, 334);
-            this.DODate.Name = "DODate";
-            this.DODate.Size = new System.Drawing.Size(346, 31);
-            this.DODate.TabIndex = 63;
-            // 
-            // TruckNumBox
-            // 
-            this.TruckNumBox.Font = new System.Drawing.Font("Britannic Bold", 15.75F);
-            this.TruckNumBox.FormattingEnabled = true;
-            this.TruckNumBox.Items.AddRange(new object[] {
-            "3",
-            "8",
-            "10",
-            "13",
-            "14"});
-            this.TruckNumBox.Location = new System.Drawing.Point(187, 64);
-            this.TruckNumBox.Name = "TruckNumBox";
-            this.TruckNumBox.Size = new System.Drawing.Size(121, 31);
-            this.TruckNumBox.TabIndex = 64;
-            // 
-            // textBox13
-            // 
-            this.textBox13.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.textBox13.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox13.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox13.Location = new System.Drawing.Point(7, 64);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(169, 24);
-            this.textBox13.TabIndex = 65;
-            this.textBox13.Text = "Truck Number: ";
-            // 
             // NewTicketWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(745, 596);
+            this.ClientSize = new System.Drawing.Size(819, 656);
             this.Controls.Add(this.panel2);
             this.Name = "NewTicketWindow";
             this.Text = "NewTicketWindow";

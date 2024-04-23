@@ -8,7 +8,15 @@ namespace TruckTracking
 {
     internal class Semi : Truck
     {
-        bool requireTrailer;
-        int mileageRate;
+        public bool RequireTrailer { get; set; }
+        public static int MileageRate { get; } = 5;
+
+        // Constructor
+        public Semi(int truckNum, bool requireTrailer, int mileage)
+        : base(truckNum)
+        {
+            RequireTrailer = requireTrailer;
+            Mileage = mileage; // Initialize mileage specific to Semi class
+        }
     }
 }

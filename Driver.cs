@@ -10,6 +10,8 @@ namespace TruckTracking
     {
         string driverName;
         int driverPay;
+        bool CDL;
+
 
     }
 }
