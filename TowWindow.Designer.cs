@@ -31,11 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TowsWindow));
             this.CompanyName = new System.Windows.Forms.TextBox();
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
-            this.Status = new System.Windows.Forms.CheckedListBox();
             this.TowSplitContainer = new System.Windows.Forms.SplitContainer();
+            this.RefreshTable = new System.Windows.Forms.Button();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.NewTicketButton = new System.Windows.Forms.Button();
+            this.EditButton = new System.Windows.Forms.Button();
             this.DropOffDateTW = new System.Windows.Forms.TextBox();
             this.PickUpDateTW = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
@@ -62,10 +63,28 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.StatusBox = new System.Windows.Forms.TextBox();
             this.TruckButton = new System.Windows.Forms.Button();
             this.TowButton = new System.Windows.Forms.Button();
             this.TruckPanel = new System.Windows.Forms.Panel();
+            this.splitter1 = new System.Windows.Forms.Splitter();
+            this.VIN14 = new System.Windows.Forms.TextBox();
+            this.VIN13 = new System.Windows.Forms.TextBox();
+            this.VIN10 = new System.Windows.Forms.TextBox();
+            this.VIN8 = new System.Windows.Forms.TextBox();
+            this.textBox29 = new System.Windows.Forms.TextBox();
+            this.VIN3 = new System.Windows.Forms.TextBox();
+            this.Service14 = new System.Windows.Forms.TextBox();
+            this.Service13 = new System.Windows.Forms.TextBox();
+            this.Service10 = new System.Windows.Forms.TextBox();
+            this.Service8 = new System.Windows.Forms.TextBox();
+            this.Service3 = new System.Windows.Forms.TextBox();
+            this.textBox19 = new System.Windows.Forms.TextBox();
+            this.Mileage14 = new System.Windows.Forms.TextBox();
+            this.Mileage13 = new System.Windows.Forms.TextBox();
+            this.Mileage10 = new System.Windows.Forms.TextBox();
+            this.Mileage8 = new System.Windows.Forms.TextBox();
+            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.Mileage3 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -100,26 +119,6 @@
             this.fileSystemWatcher1.EnableRaisingEvents = true;
             this.fileSystemWatcher1.SynchronizingObject = this;
             // 
-            // Status
-            // 
-            this.Status.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.Status.CheckOnClick = true;
-            this.Status.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Status.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.Status.FormattingEnabled = true;
-            this.Status.Items.AddRange(new object[] {
-            "Waiting for Pick Up",
-            "Picked Up",
-            "In Route",
-            "Picked Up",
-            "Dropped off",
-            "Paid",
-            "Completed"});
-            this.Status.Location = new System.Drawing.Point(763, 184);
-            this.Status.Name = "Status";
-            this.Status.Size = new System.Drawing.Size(214, 186);
-            this.Status.TabIndex = 6;
-            // 
             // TowSplitContainer
             // 
             this.TowSplitContainer.Location = new System.Drawing.Point(9, 54);
@@ -128,12 +127,14 @@
             // 
             // TowSplitContainer.Panel1
             // 
+            this.TowSplitContainer.Panel1.Controls.Add(this.RefreshTable);
             this.TowSplitContainer.Panel1.Controls.Add(this.monthCalendar1);
             this.TowSplitContainer.Panel1.Controls.Add(this.dataGridView1);
             this.TowSplitContainer.Panel1.Controls.Add(this.NewTicketButton);
             // 
             // TowSplitContainer.Panel2
             // 
+            this.TowSplitContainer.Panel2.Controls.Add(this.EditButton);
             this.TowSplitContainer.Panel2.Controls.Add(this.DropOffDateTW);
             this.TowSplitContainer.Panel2.Controls.Add(this.PickUpDateTW);
             this.TowSplitContainer.Panel2.Controls.Add(this.textBox8);
@@ -160,11 +161,20 @@
             this.TowSplitContainer.Panel2.Controls.Add(this.textBox3);
             this.TowSplitContainer.Panel2.Controls.Add(this.textBox2);
             this.TowSplitContainer.Panel2.Controls.Add(this.textBox1);
-            this.TowSplitContainer.Panel2.Controls.Add(this.Status);
-            this.TowSplitContainer.Panel2.Controls.Add(this.StatusBox);
             this.TowSplitContainer.Size = new System.Drawing.Size(1065, 601);
             this.TowSplitContainer.SplitterDistance = 210;
             this.TowSplitContainer.TabIndex = 13;
+            // 
+            // RefreshTable
+            // 
+            this.RefreshTable.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RefreshTable.Location = new System.Drawing.Point(308, 12);
+            this.RefreshTable.Name = "RefreshTable";
+            this.RefreshTable.Size = new System.Drawing.Size(75, 23);
+            this.RefreshTable.TabIndex = 20;
+            this.RefreshTable.Text = "Refresh";
+            this.RefreshTable.UseVisualStyleBackColor = true;
+            this.RefreshTable.Click += new System.EventHandler(this.RefreshTable_Click);
             // 
             // monthCalendar1
             // 
@@ -182,6 +192,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(4, 39);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(819, 162);
             this.dataGridView1.TabIndex = 18;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
@@ -200,24 +211,36 @@
             this.NewTicketButton.UseVisualStyleBackColor = false;
             this.NewTicketButton.Click += new System.EventHandler(this.NewTicketButton_Click);
             // 
+            // EditButton
+            // 
+            this.EditButton.BackColor = System.Drawing.Color.DodgerBlue;
+            this.EditButton.Font = new System.Drawing.Font("Britannic Bold", 15.75F);
+            this.EditButton.Location = new System.Drawing.Point(875, 349);
+            this.EditButton.Name = "EditButton";
+            this.EditButton.Size = new System.Drawing.Size(187, 35);
+            this.EditButton.TabIndex = 31;
+            this.EditButton.Text = "Edit Ticket";
+            this.EditButton.UseVisualStyleBackColor = false;
+            this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
+            // 
             // DropOffDateTW
             // 
             this.DropOffDateTW.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.DropOffDateTW.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DropOffDateTW.Location = new System.Drawing.Point(515, 327);
+            this.DropOffDateTW.Location = new System.Drawing.Point(660, 281);
             this.DropOffDateTW.Name = "DropOffDateTW";
             this.DropOffDateTW.ReadOnly = true;
-            this.DropOffDateTW.Size = new System.Drawing.Size(218, 31);
+            this.DropOffDateTW.Size = new System.Drawing.Size(235, 31);
             this.DropOffDateTW.TabIndex = 79;
             // 
             // PickUpDateTW
             // 
             this.PickUpDateTW.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PickUpDateTW.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PickUpDateTW.Location = new System.Drawing.Point(515, 219);
+            this.PickUpDateTW.Location = new System.Drawing.Point(660, 170);
             this.PickUpDateTW.Name = "PickUpDateTW";
             this.PickUpDateTW.ReadOnly = true;
-            this.PickUpDateTW.Size = new System.Drawing.Size(218, 31);
+            this.PickUpDateTW.Size = new System.Drawing.Size(235, 31);
             this.PickUpDateTW.TabIndex = 78;
             // 
             // textBox8
@@ -225,7 +248,7 @@
             this.textBox8.BackColor = System.Drawing.Color.LightGray;
             this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox8.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(367, 332);
+            this.textBox8.Location = new System.Drawing.Point(512, 286);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(169, 24);
             this.textBox8.TabIndex = 59;
@@ -246,7 +269,7 @@
             this.textBox5.BackColor = System.Drawing.Color.LightGray;
             this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox5.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(367, 219);
+            this.textBox5.Location = new System.Drawing.Point(512, 170);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(169, 24);
             this.textBox5.TabIndex = 58;
@@ -266,10 +289,10 @@
             // 
             this.custPhoneTW.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.custPhoneTW.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.custPhoneTW.Location = new System.Drawing.Point(525, 58);
+            this.custPhoneTW.Location = new System.Drawing.Point(758, 56);
             this.custPhoneTW.Name = "custPhoneTW";
             this.custPhoneTW.ReadOnly = true;
-            this.custPhoneTW.Size = new System.Drawing.Size(369, 31);
+            this.custPhoneTW.Size = new System.Drawing.Size(298, 31);
             this.custPhoneTW.TabIndex = 74;
             // 
             // textBox13
@@ -287,10 +310,10 @@
             // 
             this.custEmailTW.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.custEmailTW.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.custEmailTW.Location = new System.Drawing.Point(525, 95);
+            this.custEmailTW.Location = new System.Drawing.Point(758, 93);
             this.custEmailTW.Name = "custEmailTW";
             this.custEmailTW.ReadOnly = true;
-            this.custEmailTW.Size = new System.Drawing.Size(369, 31);
+            this.custEmailTW.Size = new System.Drawing.Size(298, 31);
             this.custEmailTW.TabIndex = 73;
             // 
             // textBox10
@@ -298,7 +321,7 @@
             this.textBox10.BackColor = System.Drawing.Color.LightGray;
             this.textBox10.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox10.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox10.Location = new System.Drawing.Point(359, 60);
+            this.textBox10.Location = new System.Drawing.Point(592, 58);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(169, 24);
             this.textBox10.TabIndex = 75;
@@ -318,10 +341,10 @@
             // 
             this.custNameTW.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.custNameTW.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.custNameTW.Location = new System.Drawing.Point(525, 18);
+            this.custNameTW.Location = new System.Drawing.Point(758, 16);
             this.custNameTW.Name = "custNameTW";
             this.custNameTW.ReadOnly = true;
-            this.custNameTW.Size = new System.Drawing.Size(369, 31);
+            this.custNameTW.Size = new System.Drawing.Size(298, 31);
             this.custNameTW.TabIndex = 72;
             // 
             // PuLocTW
@@ -349,7 +372,7 @@
             this.textBox11.BackColor = System.Drawing.Color.LightGray;
             this.textBox11.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox11.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox11.Location = new System.Drawing.Point(360, 97);
+            this.textBox11.Location = new System.Drawing.Point(593, 95);
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(169, 24);
             this.textBox11.TabIndex = 74;
@@ -370,7 +393,7 @@
             this.textBox12.BackColor = System.Drawing.Color.LightGray;
             this.textBox12.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox12.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox12.Location = new System.Drawing.Point(360, 18);
+            this.textBox12.Location = new System.Drawing.Point(593, 16);
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(169, 24);
             this.textBox12.TabIndex = 73;
@@ -473,18 +496,6 @@
             this.textBox1.TabIndex = 66;
             this.textBox1.Text = "Ticket Number: ";
             // 
-            // StatusBox
-            // 
-            this.StatusBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.StatusBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.StatusBox.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StatusBox.Location = new System.Drawing.Point(763, 147);
-            this.StatusBox.Name = "StatusBox";
-            this.StatusBox.Size = new System.Drawing.Size(214, 31);
-            this.StatusBox.TabIndex = 14;
-            this.StatusBox.Text = "Status";
-            this.StatusBox.TextChanged += new System.EventHandler(this.StatusBox_TextChanged);
-            // 
             // TruckButton
             // 
             this.TruckButton.Font = new System.Drawing.Font("Britannic Bold", 15.75F);
@@ -509,6 +520,25 @@
             // 
             // TruckPanel
             // 
+            this.TruckPanel.Controls.Add(this.splitter1);
+            this.TruckPanel.Controls.Add(this.VIN14);
+            this.TruckPanel.Controls.Add(this.VIN13);
+            this.TruckPanel.Controls.Add(this.VIN10);
+            this.TruckPanel.Controls.Add(this.VIN8);
+            this.TruckPanel.Controls.Add(this.textBox29);
+            this.TruckPanel.Controls.Add(this.VIN3);
+            this.TruckPanel.Controls.Add(this.Service14);
+            this.TruckPanel.Controls.Add(this.Service13);
+            this.TruckPanel.Controls.Add(this.Service10);
+            this.TruckPanel.Controls.Add(this.Service8);
+            this.TruckPanel.Controls.Add(this.Service3);
+            this.TruckPanel.Controls.Add(this.textBox19);
+            this.TruckPanel.Controls.Add(this.Mileage14);
+            this.TruckPanel.Controls.Add(this.Mileage13);
+            this.TruckPanel.Controls.Add(this.Mileage10);
+            this.TruckPanel.Controls.Add(this.Mileage8);
+            this.TruckPanel.Controls.Add(this.textBox14);
+            this.TruckPanel.Controls.Add(this.Mileage3);
             this.TruckPanel.Controls.Add(this.label6);
             this.TruckPanel.Controls.Add(this.label5);
             this.TruckPanel.Controls.Add(this.label4);
@@ -520,11 +550,220 @@
             this.TruckPanel.Size = new System.Drawing.Size(1074, 602);
             this.TruckPanel.TabIndex = 17;
             // 
+            // splitter1
+            // 
+            this.splitter1.Location = new System.Drawing.Point(0, 0);
+            this.splitter1.Name = "splitter1";
+            this.splitter1.Size = new System.Drawing.Size(3, 602);
+            this.splitter1.TabIndex = 71;
+            this.splitter1.TabStop = false;
+            // 
+            // VIN14
+            // 
+            this.VIN14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.VIN14.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VIN14.Location = new System.Drawing.Point(904, 122);
+            this.VIN14.Name = "VIN14";
+            this.VIN14.ReadOnly = true;
+            this.VIN14.Size = new System.Drawing.Size(128, 29);
+            this.VIN14.TabIndex = 70;
+            this.VIN14.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // VIN13
+            // 
+            this.VIN13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.VIN13.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VIN13.Location = new System.Drawing.Point(713, 122);
+            this.VIN13.Name = "VIN13";
+            this.VIN13.ReadOnly = true;
+            this.VIN13.Size = new System.Drawing.Size(128, 29);
+            this.VIN13.TabIndex = 69;
+            this.VIN13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // VIN10
+            // 
+            this.VIN10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.VIN10.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VIN10.Location = new System.Drawing.Point(529, 120);
+            this.VIN10.Name = "VIN10";
+            this.VIN10.ReadOnly = true;
+            this.VIN10.Size = new System.Drawing.Size(128, 29);
+            this.VIN10.TabIndex = 68;
+            this.VIN10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // VIN8
+            // 
+            this.VIN8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.VIN8.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VIN8.Location = new System.Drawing.Point(331, 122);
+            this.VIN8.Name = "VIN8";
+            this.VIN8.ReadOnly = true;
+            this.VIN8.Size = new System.Drawing.Size(128, 29);
+            this.VIN8.TabIndex = 67;
+            this.VIN8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox29
+            // 
+            this.textBox29.BackColor = System.Drawing.Color.LightGray;
+            this.textBox29.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox29.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox29.Location = new System.Drawing.Point(15, 122);
+            this.textBox29.Name = "textBox29";
+            this.textBox29.ReadOnly = true;
+            this.textBox29.Size = new System.Drawing.Size(76, 22);
+            this.textBox29.TabIndex = 66;
+            this.textBox29.Text = "VIN:";
+            // 
+            // VIN3
+            // 
+            this.VIN3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.VIN3.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VIN3.Location = new System.Drawing.Point(156, 122);
+            this.VIN3.Name = "VIN3";
+            this.VIN3.ReadOnly = true;
+            this.VIN3.Size = new System.Drawing.Size(128, 29);
+            this.VIN3.TabIndex = 65;
+            this.VIN3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // Service14
+            // 
+            this.Service14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Service14.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Service14.Location = new System.Drawing.Point(904, 307);
+            this.Service14.Name = "Service14";
+            this.Service14.ReadOnly = true;
+            this.Service14.Size = new System.Drawing.Size(128, 29);
+            this.Service14.TabIndex = 64;
+            this.Service14.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // Service13
+            // 
+            this.Service13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Service13.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Service13.Location = new System.Drawing.Point(713, 311);
+            this.Service13.Name = "Service13";
+            this.Service13.ReadOnly = true;
+            this.Service13.Size = new System.Drawing.Size(128, 29);
+            this.Service13.TabIndex = 63;
+            this.Service13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // Service10
+            // 
+            this.Service10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Service10.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Service10.Location = new System.Drawing.Point(529, 313);
+            this.Service10.Name = "Service10";
+            this.Service10.ReadOnly = true;
+            this.Service10.Size = new System.Drawing.Size(128, 29);
+            this.Service10.TabIndex = 62;
+            this.Service10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // Service8
+            // 
+            this.Service8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Service8.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Service8.Location = new System.Drawing.Point(331, 311);
+            this.Service8.Name = "Service8";
+            this.Service8.ReadOnly = true;
+            this.Service8.Size = new System.Drawing.Size(128, 29);
+            this.Service8.TabIndex = 61;
+            this.Service8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // Service3
+            // 
+            this.Service3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Service3.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Service3.Location = new System.Drawing.Point(156, 311);
+            this.Service3.Name = "Service3";
+            this.Service3.ReadOnly = true;
+            this.Service3.Size = new System.Drawing.Size(128, 29);
+            this.Service3.TabIndex = 60;
+            this.Service3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox19
+            // 
+            this.textBox19.BackColor = System.Drawing.Color.LightGray;
+            this.textBox19.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox19.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox19.Location = new System.Drawing.Point(15, 313);
+            this.textBox19.Name = "textBox19";
+            this.textBox19.ReadOnly = true;
+            this.textBox19.Size = new System.Drawing.Size(114, 22);
+            this.textBox19.TabIndex = 59;
+            this.textBox19.Text = "Last Service: ";
+            // 
+            // Mileage14
+            // 
+            this.Mileage14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Mileage14.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Mileage14.Location = new System.Drawing.Point(904, 210);
+            this.Mileage14.Name = "Mileage14";
+            this.Mileage14.ReadOnly = true;
+            this.Mileage14.Size = new System.Drawing.Size(128, 29);
+            this.Mileage14.TabIndex = 58;
+            this.Mileage14.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // Mileage13
+            // 
+            this.Mileage13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Mileage13.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Mileage13.Location = new System.Drawing.Point(713, 210);
+            this.Mileage13.Name = "Mileage13";
+            this.Mileage13.ReadOnly = true;
+            this.Mileage13.Size = new System.Drawing.Size(128, 29);
+            this.Mileage13.TabIndex = 57;
+            this.Mileage13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // Mileage10
+            // 
+            this.Mileage10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Mileage10.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Mileage10.Location = new System.Drawing.Point(529, 208);
+            this.Mileage10.Name = "Mileage10";
+            this.Mileage10.ReadOnly = true;
+            this.Mileage10.Size = new System.Drawing.Size(128, 29);
+            this.Mileage10.TabIndex = 56;
+            this.Mileage10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // Mileage8
+            // 
+            this.Mileage8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Mileage8.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Mileage8.Location = new System.Drawing.Point(331, 210);
+            this.Mileage8.Name = "Mileage8";
+            this.Mileage8.ReadOnly = true;
+            this.Mileage8.Size = new System.Drawing.Size(128, 29);
+            this.Mileage8.TabIndex = 55;
+            this.Mileage8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox14
+            // 
+            this.textBox14.BackColor = System.Drawing.Color.LightGray;
+            this.textBox14.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox14.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox14.Location = new System.Drawing.Point(15, 210);
+            this.textBox14.Name = "textBox14";
+            this.textBox14.ReadOnly = true;
+            this.textBox14.Size = new System.Drawing.Size(114, 22);
+            this.textBox14.TabIndex = 54;
+            this.textBox14.Text = "Mileage: ";
+            // 
+            // Mileage3
+            // 
+            this.Mileage3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Mileage3.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Mileage3.Location = new System.Drawing.Point(156, 210);
+            this.Mileage3.Name = "Mileage3";
+            this.Mileage3.ReadOnly = true;
+            this.Mileage3.Size = new System.Drawing.Size(128, 29);
+            this.Mileage3.TabIndex = 40;
+            this.Mileage3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Britannic Bold", 15.75F);
-            this.label6.Location = new System.Drawing.Point(967, 89);
+            this.label6.Location = new System.Drawing.Point(937, 55);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(51, 23);
             this.label6.TabIndex = 17;
@@ -534,7 +773,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Britannic Bold", 15.75F);
-            this.label5.Location = new System.Drawing.Point(493, 89);
+            this.label5.Location = new System.Drawing.Point(561, 53);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(51, 23);
             this.label5.TabIndex = 16;
@@ -544,7 +783,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Britannic Bold", 15.75F);
-            this.label4.Location = new System.Drawing.Point(729, 89);
+            this.label4.Location = new System.Drawing.Point(745, 53);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(51, 23);
             this.label4.TabIndex = 15;
@@ -554,7 +793,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Britannic Bold", 15.75F);
-            this.label3.Location = new System.Drawing.Point(274, 89);
+            this.label3.Location = new System.Drawing.Point(369, 53);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(38, 23);
             this.label3.TabIndex = 14;
@@ -564,7 +803,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Britannic Bold", 15.75F);
-            this.label2.Location = new System.Drawing.Point(68, 89);
+            this.label2.Location = new System.Drawing.Point(193, 53);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(38, 23);
             this.label2.TabIndex = 13;
@@ -574,7 +813,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Britannic Bold", 15.75F);
-            this.label1.Location = new System.Drawing.Point(22, 35);
+            this.label1.Location = new System.Drawing.Point(11, 53);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(141, 23);
             this.label1.TabIndex = 12;
@@ -602,13 +841,12 @@
             this.Controls.Add(this.CompanyName);
             this.Controls.Add(this.TowButton);
             this.Controls.Add(this.TruckButton);
-            this.Controls.Add(this.TruckPanel);
             this.Controls.Add(this.TowSplitContainer);
+            this.Controls.Add(this.TruckPanel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TowsWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tow Truck Tracking";
-            this.Load += new System.EventHandler(this.MainWindow_Load);
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             this.TowSplitContainer.Panel1.ResumeLayout(false);
             this.TowSplitContainer.Panel2.ResumeLayout(false);
@@ -627,9 +865,7 @@
 
         private System.Windows.Forms.TextBox CompanyName;
         private System.IO.FileSystemWatcher fileSystemWatcher1;
-        private System.Windows.Forms.CheckedListBox Status;
         private System.Windows.Forms.SplitContainer TowSplitContainer;
-        private System.Windows.Forms.TextBox StatusBox;
         private System.Windows.Forms.Button TruckButton;
         private System.Windows.Forms.Button TowButton;
         private System.Windows.Forms.Button NewTicketButton;
@@ -669,6 +905,27 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button CompTickets;
+        private System.Windows.Forms.Button EditButton;
+        private System.Windows.Forms.TextBox Mileage3;
+        private System.Windows.Forms.TextBox Mileage8;
+        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.TextBox Mileage14;
+        private System.Windows.Forms.TextBox Mileage13;
+        private System.Windows.Forms.TextBox Mileage10;
+        private System.Windows.Forms.TextBox textBox19;
+        private System.Windows.Forms.TextBox Service14;
+        private System.Windows.Forms.TextBox Service13;
+        private System.Windows.Forms.TextBox Service10;
+        private System.Windows.Forms.TextBox Service8;
+        private System.Windows.Forms.TextBox Service3;
+        private System.Windows.Forms.Splitter splitter1;
+        private System.Windows.Forms.TextBox VIN14;
+        private System.Windows.Forms.TextBox VIN13;
+        private System.Windows.Forms.TextBox VIN10;
+        private System.Windows.Forms.TextBox VIN8;
+        private System.Windows.Forms.TextBox textBox29;
+        private System.Windows.Forms.TextBox VIN3;
+        private System.Windows.Forms.Button RefreshTable;
     }
 }
 

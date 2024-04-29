@@ -8,14 +8,18 @@ namespace TruckTracking
 {
     internal class HeavyDuty : Truck
     {
-        static int HourlyRate = 150;
-
+        public static double HourlyRate { get; } = 200.00;
         // Constructor
-        public HeavyDuty(int truckNum, int hourlyRate, int mileage)
+        public HeavyDuty(int truckNum, double hourlyRate, int mileage)
         : base(truckNum)
         {
-            HourlyRate = hourlyRate;
             Mileage = mileage;
+        }
+        public override double getTicketCost(double TicketTime)
+        {
+            // Calculate ticket cost for HeavyDuty
+            // Eventually would add in drivers w/ their hourly cost to add in
+            return TicketTime * HourlyRate;
         }
     }
 }

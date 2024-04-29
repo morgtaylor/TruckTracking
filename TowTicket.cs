@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.SQLite;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TruckTracking
 {
@@ -12,26 +8,25 @@ namespace TruckTracking
     {
         // Properties
         public int TicketNumber { get; private set; }
-        public string DriverName { get; }
-        public string TruckNum { get; }
-        public string PickUpTime { get; }
-        public string DropOffTime { get; }
-        public string PickUpDate { get; }
-        public string DropOffDate { get; }
-        public string PickUpLocation { get; }
-        public string DropOffLocation { get; }
-        public double EstimatedCost { get; }
-        public string CustomerName { get; }
-        public string CustomerEmail { get; }
-        public string CustomerPhone { get; }
-        public List<bool> StatusList { get; }
+        public string DriverName { get; internal set; }
+        public int TruckNum { get; internal set; }
+        public string PickUpTime { get; internal set; }
+        public string DropOffTime { get; internal set; }
+        public string PickUpDate { get; internal set; }
+        public string DropOffDate { get; internal set; }
+        public string PickUpLocation { get; internal set; }
+        public string DropOffLocation { get; internal set; }
+        public double EstimatedCost { get; internal set; }
+        public string CustomerName { get; internal set; }
+        public string CustomerEmail { get; internal set; }
+        public string CustomerPhone { get; internal set; }
 
         //Parameterized Constructor
         public TowTicket(int ticketNumber, string driverName, string truckNum, string pickUpTime, string dropOffTime, string pickUpDate, string dropOffDate, string pickUpLocation, string dropOffLocation, double estimatedCost, string customerName, string customerEmail, string customerPhone)
         {
             TicketNumber = ticketNumber;
             DriverName = driverName;
-            TruckNum = truckNum;
+            TruckNum = Convert.ToInt32(truckNum);
             PickUpTime = pickUpTime;
             DropOffTime = dropOffTime;
             PickUpDate = pickUpDate;
@@ -42,7 +37,6 @@ namespace TruckTracking
             CustomerName = customerName;
             CustomerEmail = customerEmail;
             CustomerPhone = customerPhone;
-            StatusList = new List<bool>();
         }
         //Empty Constructor
         public TowTicket()
@@ -56,7 +50,6 @@ namespace TruckTracking
 
             // SQL query to select the maximum ticket number from the Tickets table
             string selectMaxTicketNumQuery = "SELECT MAX(TicketNumber) FROM Tickets";
-
             using (var connection = new SQLiteConnection(Database.connectionString))
             {
                 connection.Open();
@@ -64,7 +57,6 @@ namespace TruckTracking
                 using (var command = new SQLiteCommand(selectMaxTicketNumQuery, connection))
                 {
                     object result = command.ExecuteScalar();
-
                     if (result != DBNull.Value && result != null)
                     {
                         // If there are existing tickets, increment the maximum ticket number

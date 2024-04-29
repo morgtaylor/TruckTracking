@@ -8,14 +8,19 @@ namespace TruckTracking
 {
     internal class Flatbed : Truck
     {
-        int HourlyRate;
+        public static double HourlyRate { get; } = 100.00;
 
         // Constructor
-        public Flatbed(int truckNum, int hourlyRate, int mileage)
+        public Flatbed(int truckNum, double hourlyRate, int mileage)
         : base(truckNum)
         {
-            HourlyRate = hourlyRate;
             Mileage = mileage;
+        }
+        public override double getTicketCost(double TicketTime)
+        {
+            // Calculate ticket cost for Flatbed
+            // Eventually would add in drivers w/ their hourly cost to add in
+            return TicketTime * HourlyRate;
         }
     }
 }
