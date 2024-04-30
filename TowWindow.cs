@@ -7,7 +7,7 @@ namespace TruckTracking
 {
     public partial class TowsWindow : Form
     {
-        internal readonly ITruckCollection truckCollection;
+        internal readonly ITruckCollection truckManager;
         internal NewTicketWindow newTicketWindow;
 
         internal TowsWindow(ITruckCollection truckCollection)
@@ -15,7 +15,7 @@ namespace TruckTracking
             InitializeComponent();
             PopulateTicketGrid();
             TruckPanel.Visible = false;
-            this.truckCollection = truckCollection;
+            this.truckManager = truckCollection;
         }
 
         private void TruckButton_Click(object sender, EventArgs e)
@@ -23,7 +23,7 @@ namespace TruckTracking
             TowSplitContainer.Visible = false;
             TruckPanel.Visible = true;
 
-            foreach (Truck truck in truckCollection.Trucks)
+            foreach (Truck truck in truckManager.Trucks)
             {
                 switch (truck.TruckNum)
                 {
@@ -62,7 +62,7 @@ namespace TruckTracking
         }
         private void NewTicketButton_Click(object sender, EventArgs e)
         {
-            newTicketWindow = new NewTicketWindow(truckCollection);
+            newTicketWindow = new NewTicketWindow(truckManager);
             newTicketWindow.Show();
         }
         private void EditButton_Click(object sender, EventArgs e)
@@ -76,17 +76,17 @@ namespace TruckTracking
             // Get the selected ticket number from the DataGridView
             int ticketNumber = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["TicketNumber"].Value);
             // Retrieve the ticket information from the database based on the selected ticket number
-            TowTicket ticket = Database.GetTicketFromDatabase(ticketNumber);
+            TowTicket ticket = TicketDatabase.GetTicketFromDatabase(ticketNumber);
             // Check if the ticket is found
             if (ticket == null)
             {
                 MessageBox.Show("Failed to retrieve ticket information.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }         
-            NewTicketWindow editTicketWindow = new NewTicketWindow(ticket, truckCollection);
+            NewTicketWindow editTicketWindow = new NewTicketWindow(ticket, truckManager);
             editTicketWindow.Show();
         }
-        internal void PopulateTicketGrid()
+        private void PopulateTicketGrid()
         {
             string selectQuery = "SELECT * FROM Tickets";
 

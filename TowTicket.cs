@@ -3,11 +3,10 @@ using System.Data.SQLite;
 
 namespace TruckTracking
 {
-    
     public class TowTicket
     {
         // Properties
-        public int TicketNumber { get; private set; }
+        public int TicketNumber { get; }
         public string DriverName { get; internal set; }
         public int TruckNum { get; internal set; }
         public string PickUpTime { get; internal set; }
@@ -47,24 +46,30 @@ namespace TruckTracking
         public int getTicketNum()
         {
             int nextTicketNum = 1;
-
-            // SQL query to select the maximum ticket number from the Tickets table
-            string selectMaxTicketNumQuery = "SELECT MAX(TicketNumber) FROM Tickets";
-            using (var connection = new SQLiteConnection(Database.connectionString))
+            try
             {
-                connection.Open();
-
-                using (var command = new SQLiteCommand(selectMaxTicketNumQuery, connection))
+                // SQL query to select the maximum ticket number from the Tickets table
+                string selectMaxTicketNumQuery = "SELECT MAX(TicketNumber) FROM Tickets";
+                using (var connection = new SQLiteConnection(Database.connectionString))
                 {
-                    object result = command.ExecuteScalar();
-                    if (result != DBNull.Value && result != null)
+                    connection.Open();
+
+                    using (var command = new SQLiteCommand(selectMaxTicketNumQuery, connection))
                     {
-                        // If there are existing tickets, increment the maximum ticket number
-                        nextTicketNum = Convert.ToInt32(result) + 1;
+                        object result = command.ExecuteScalar();
+                        if (result != DBNull.Value && result != null)
+                        {
+                            // If there are existing tickets, increment the maximum ticket number
+                            nextTicketNum = Convert.ToInt32(result) + 1;
+                        }
                     }
                 }
             }
-
+            catch (Exception ex)
+            {
+                // Handle exceptions here (e.g., log error, display error message)
+                Console.WriteLine($"Error retrieving next ticket number: {ex.Message}");
+            }
             return nextTicketNum;
         }
     }

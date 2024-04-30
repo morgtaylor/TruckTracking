@@ -5,6 +5,8 @@ VisualStudioVersion = 17.9.34723.18
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TruckTracking", "TruckTracking.csproj", "{022B7C62-76E5-47B6-BA65-448AA9BE3821}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TruckTrackingTests3", "..\TruckTrackingTests3\TruckTrackingTests3.csproj", "{0950840B-F4C3-4D7C-8A55-A4F7EADE9D0D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{022B7C62-76E5-47B6-BA65-448AA9BE3821}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{022B7C62-76E5-47B6-BA65-448AA9BE3821}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{022B7C62-76E5-47B6-BA65-448AA9BE3821}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0950840B-F4C3-4D7C-8A55-A4F7EADE9D0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0950840B-F4C3-4D7C-8A55-A4F7EADE9D0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0950840B-F4C3-4D7C-8A55-A4F7EADE9D0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0950840B-F4C3-4D7C-8A55-A4F7EADE9D0D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

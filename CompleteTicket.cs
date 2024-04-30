@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -15,9 +14,7 @@ namespace TruckTracking
             InitializeComponent();
             this.truckManager = truckManager;
             // Retrieve the ticket object using the ticket number
-            ticket = Database.GetTicketFromDatabase(ticketNumber);
-
-            // Populate form controls with ticket data
+            ticket = TicketDatabase.GetTicketFromDatabase(ticketNumber);
             CTTicketNum.Text = ticket.TicketNumber.ToString();
             CTTruckNum.Text = ticket.TruckNum.ToString();
         }

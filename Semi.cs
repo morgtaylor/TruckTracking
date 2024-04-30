@@ -8,8 +8,8 @@
         // Constructor
         public Semi(int truckNum, bool requireTrailer, int mileage, int mileageRate)
         : base(truckNum)
-       {
-            RequireTrailer = requireTrailer;
+        {
+            RequireTrailer = requireTrailer; //ideally would add an option on ticket to determine bool value and store on ticket. 
             Mileage = mileage; // Initialize mileage specific to Semi class
         }
         public override double getTicketCost(double TicketTime, int newMileage)

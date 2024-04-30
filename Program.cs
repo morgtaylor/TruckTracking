@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace TruckTracking
@@ -49,10 +48,6 @@ namespace TruckTracking
             heavyduty2.EmptyWeight = 16500;
             truckManager.Trucks.Add(heavyduty2);
 
-            foreach (var truck in truckManager.Trucks)
-            {
-                Console.WriteLine($"Truck number: {truck.TruckNum}");
-            }
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
